@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "Project2026/djangowebite2026/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "Project2026/djangowebite2026/wsgi.py"
+    }
+  ]
+}
