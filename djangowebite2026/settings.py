@@ -1,21 +1,12 @@
-#tempat install package dan modul2
 
-import os
 from pathlib import Path
 
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r=^r5*v#yes$1b7k$-d9*1y6#@_=cn_nktmx=x0b53l^&$%x$@'
+SECRET_KEY = 'django-insecure-&x)^dv4-177p+ya90!e-)h7ic1y^*kntpwy!335en8csihkfh1'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-#fungsi untuk ke Production
-ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -27,10 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.blogConfig', # menambahkan aplikasi blog ke dalam INSTALLED_APPS Saling terkoneksi antara aplikasi 
-    #dengan project utama, sehingga aplikasi dapat dikenali dan digunakan dalam project Django kita.
-    'kontak.apps.KontakConfig', # menambahkan aplikasi kontak ke dalam INSTALLED_APPS Saling terkoneksi antara aplikasi
-] 
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -42,12 +30,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'djangowebite2026.urls'
+ROOT_URLCONF = 'djangowebsite2026.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -60,12 +48,15 @@ TEMPLATES = [
     },
 ]
 
-# (WSGI) adalah sebuah spesifikasi yang digunakan untuk menghubungkan aplikasi web dengan server web. Dalam konteks Django, WSGI_APPLICATION adalah sebuah pengaturan yang menentukan modul WSGI yang akan digunakan untuk menjalankan aplikasi Django.
 WSGI_APPLICATION = 'djangowebite2026.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+DEBUG = False
+
+ALLOWED_HOSTS = ['*']
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DATABASES = {
     'default': {
@@ -75,8 +66,6 @@ DATABASES = {
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -94,8 +83,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
+
 
 LANGUAGE_CODE = 'en-us'
 
@@ -106,18 +94,9 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static"
-]
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
