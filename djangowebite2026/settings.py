@@ -1,6 +1,6 @@
 
 from pathlib import Path
-
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -55,8 +55,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+ROOT_URLCONF = 'djangowebite2026.urls'
+
+WSGI_APPLICATION = 'djangowebite2026.wsgi.application'
 
 DATABASES = {
     'default': {
@@ -95,8 +96,9 @@ USE_TZ = True
 
 
 
-STATIC_URL = 'static/'
 
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
